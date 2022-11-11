@@ -1,6 +1,6 @@
 # black-friday-mega
 
-# black-friday-mega.vercel.app
+# https://black-friday-mega.vercel.app/
 
 
 
