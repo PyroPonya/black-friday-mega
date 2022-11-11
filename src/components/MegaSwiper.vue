@@ -5,8 +5,9 @@
     :freeMode="false"
     :autoplay="{
       delay: 3000,
-      disableOnInteraction: true,
+      disableOnInteraction: false,
     }"
+    :rewind="true"
     :navigation="true"
     :pagination="false"
     :modules="modules"
@@ -31,8 +32,6 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/free-mode';
 import 'swiper/css/pagination';
-
-// import './style.css';
 
 // import required modules
 import { FreeMode, Pagination } from 'swiper';
