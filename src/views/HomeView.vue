@@ -25,8 +25,6 @@ const redirectTo = (where) => {
   background-color: #000000
   overflow-x: hidden
   z-index: 0
-  .m_head
-    max-width: 1440px
   .m_timer
     width: 100%
     min-height: 120px
