@@ -3,9 +3,19 @@
     <div class="container__timer">
       <div class="timer__title">Remaining&nbsp;time:</div>
       <div class="timer__main">
-        {{ dateDiff.getDate() }}D:{{ dateDiff.getHours() }}H:{{
-          dateDiff.getMinutes()
-        }}M
+        {{ dateDiff.getDate() }}:{{
+          dateDiff.getHours() < 10
+            ? '0' + dateDiff.getHours()
+            : dateDiff.getHours()
+        }}:{{
+          dateDiff.getMinutes() < 10
+            ? '0' + dateDiff.getMinutes()
+            : dateDiff.getMinutes()
+        }}:{{
+          dateDiff.getSeconds() < 10
+            ? '0' + dateDiff.getSeconds()
+            : dateDiff.getSeconds()
+        }}
       </div>
       <div class="timer__bg"></div>
     </div>
@@ -19,7 +29,7 @@ export default {
   setup() {
     const isMobile = ref(false);
     const dateNow = ref(Date.now());
-    const dateDue = ref(new Date('2022-12-01T00:00:00'));
+    const dateDue = ref(new Date('2022-12-01T08:00:00'));
     const dateDiff = ref(new Date(dateDue.value - dateNow.value));
     let intervalUpdater = setInterval(() => {
       dateNow.value = Date.now();

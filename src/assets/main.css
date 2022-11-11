@@ -11,6 +11,17 @@
   margin: 0;
 }
 
+.swiper-button-next,
+.swiper-button-prev {
+  color: white;
+}
+.swiper-button-next,
+.swiper-button-prev,
+.swiper-container-rtl .swiper-button-prev,
+.swiper-container-rtl .swiper-button-next {
+  fill: #000;
+}
+
 input,
 button,
 textarea,

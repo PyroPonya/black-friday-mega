@@ -3,6 +3,11 @@
     :slidesPerView="1"
     :spaceBetween="55"
     :freeMode="false"
+    :autoplay="{
+      delay: 3000,
+      disableOnInteraction: true,
+    }"
+    :navigation="true"
     :pagination="false"
     :modules="modules"
     class="mySwiper"
@@ -19,10 +24,11 @@
 <script>
 // Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from 'swiper/vue';
+import { Navigation } from 'swiper';
 
 // Import Swiper styles
 import 'swiper/css';
-
+import 'swiper/css/navigation';
 import 'swiper/css/free-mode';
 import 'swiper/css/pagination';
 
@@ -42,7 +48,7 @@ export default {
       emit('requestRedirect', where);
     };
     return {
-      modules: [FreeMode, Pagination],
+      modules: [FreeMode, Pagination, Navigation],
       props,
       requestRedirect,
     };
