@@ -16,8 +16,8 @@
     <swiper-slide v-for="(el, id) in slides" :key="id" class="swiper__slide">
       <div @click="requestRedirect(el.link)" class="card__element">
         <div class="el__text">{{ el.text }}</div>
-        <img :src="el.imgHead" class="el__head" />
-        <img :src="el.imgBody" class="el__body" />
+        <img :src="el.imgHead_mobile" class="el__head" />
+        <img :src="el.imgBody_mobile" class="el__body" />
       </div>
     </swiper-slide>
   </swiper>
@@ -64,7 +64,7 @@ export default {
   text-align: center;
   font-size: 18px;
   background: none;
-  min-height: 255px;
+  min-height: 390px;
   /* max-width: 288px !important; */
   min-width: 287px !important;
   /* width: 288px !important; */
@@ -105,21 +105,23 @@ export default {
 }
 .swiper__slide:nth-child(1) .el__text {
   max-width: 155px;
+  margin-top: -5%;
 }
 .swiper__slide:nth-child(1) .el__body {
   bottom: 20px;
-  width: 164px;
-  height: 99px;
+  width: 155px;
+  height: 94px;
 }
 .swiper__slide:nth-child(2) .el__text {
   max-width: 140px;
 }
 .swiper__slide:nth-child(2) .el__body {
-  bottom: -20px;
+  width: 186px;
+  height: 137px;
 }
 .swiper__slide:nth-child(3) .el__body {
   max-height: 135px;
-  bottom: -10px;
+  /* bottom: -10px; */
 }
 .swiper__slide:nth-child(4) .card__element {
   align-items: flex-end;
@@ -129,9 +131,8 @@ export default {
   max-width: 55px;
 }
 .swiper__slide:nth-child(4) .el__body {
-  top: 10px;
-  right: 0;
-  transform: rotateZ(15deg);
+  top: 0px;
+  right: -20px;
 }
 .swiper__slide:nth-child(5) .card__element {
   align-items: flex-end;
@@ -141,24 +142,40 @@ export default {
   max-width: 138px;
 }
 .swiper__slide:nth-child(5) .el__body {
-  bottom: 70px;
+  bottom: 60px;
+  height: 144px;
+  width: 148px;
 }
 .swiper__slide:nth-child(6) .el__text {
   max-width: 128px;
   margin-top: -10px;
 }
+.swiper__slide:nth-child(6) .el__body {
+  width: 168px;
+  height: 164px;
+}
 .swiper__slide:nth-child(7) .el__text {
   max-width: 148px;
+  margin-top: -15px;
+}
+.swiper__slide:nth-child(7) .el__body {
+  width: 188px;
+  height: 131px;
 }
 .swiper__slide:nth-child(8) .el__text {
   max-width: 230px;
 }
+.swiper__slide:nth-child(8) .el__body {
+  width: 145px;
+  height: 148px;
+}
 .swiper__slide:nth-child(9) .el__text {
   max-width: 230px;
-  margin-top: -10px;
+  margin-top: -15px;
 }
 .swiper__slide:nth-child(9) .el__body {
-  bottom: -5px;
+  width: 184px;
+  height: 152px;
 }
 .swiper__slide:nth-child(10) .card__element {
   display: flex;
@@ -167,14 +184,25 @@ export default {
 }
 .swiper__slide:nth-child(10) .el__body {
   bottom: 50px;
+  width: 92px;
+  height: 133px;
 }
 .swiper__slide:nth-child(11) .el__text {
   max-width: 170px;
   margin-top: -10px;
 }
+.swiper__slide:nth-child(11) .el__body {
+  width: 87px;
+  height: 121px;
+  margin-bottom: 10px;
+}
 .swiper__slide:nth-child(12) .el__text {
   max-width: 170px;
   margin-top: -10px;
+}
+.swiper__slide:nth-child(12) .el__body {
+  width: 154px;
+  height: 153px;
 }
 .swiper__slide:nth-child(13) .card__element {
   display: flex;
@@ -182,7 +210,9 @@ export default {
   align-items: flex-end;
 }
 .swiper__slide:nth-child(13) .el__body {
-  bottom: 50px;
+  bottom: 60px;
+  width: 105px;
+  height: 113px;
 }
 .swiper__slide:nth-child(13) .el__text {
   max-width: 130px;
@@ -191,13 +221,17 @@ export default {
   max-width: 150px;
   margin-top: -10px;
 }
+.swiper__slide:nth-child(14) .el__body {
+  width: 155px;
+  height: 148px;
+}
 .swiper__slide:nth-child(15) .el__text {
   max-width: 106px;
 }
 .swiper__slide:nth-child(15) .el__body {
   bottom: 20px;
-  width: 164px;
-  height: 99px;
+  width: 155px;
+  height: 94px;
 }
 .el__text {
   font-family: 'Montserrat';
@@ -212,8 +246,12 @@ export default {
 }
 .el__head {
   position: absolute;
-  top: -10px;
-  left: 17%;
+  /* top: -10px; */
+  top: -5%;
+  /* left: 17%; */
+  left: auto;
+  height: 75px;
+  width: 185px;
 }
 .el__body {
   position: absolute;

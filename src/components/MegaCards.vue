@@ -16,8 +16,14 @@
         <div class="el__text">
           {{ el.text }}
         </div>
-        <img :src="el.imgHead" class="el__head" />
-        <img :src="el.imgBody" class="el__body" />
+        <img
+          :src="isMobile ? el.imgHead_mobile : el.imgHead"
+          class="el__head"
+        />
+        <img
+          :src="isMobile ? el.imgBody_mobile : el.imgBody"
+          class="el__body"
+        />
       </div>
     </div>
     <div class="bottom__deco"></div>
@@ -26,157 +32,187 @@
 
 <script>
 import MegaSwiper from './MegaSwiper.vue';
-import list_top_1 from '../assets/list/list_top_1.svg';
-import list_top_2 from '../assets/list/list_top_2.svg';
-import list_top_3 from '../assets/list/list_top_3.svg';
-import list_top_4 from '../assets/list/list_top_4.svg';
-import list_top_5 from '../assets/list/list_top_5.svg';
-import list_top_6 from '../assets/list/list_top_6.svg';
-import list_top_7 from '../assets/list/list_top_7.svg';
-import list_top_8 from '../assets/list/list_top_8.svg';
-import list_top_9 from '../assets/list/list_top_9.svg';
-import list_top_10 from '../assets/list/list_top_10.svg';
-import list_top_11 from '../assets/list/list_top_11.svg';
-import list_top_12 from '../assets/list/list_top_12.svg';
-import list_top_13 from '../assets/list/list_top_13.svg';
-import list_top_14 from '../assets/list/list_top_14.svg';
-import list_top_15 from '../assets/list/list_top_15.svg';
-// import list_top_1 from '../assets/list/list_top_1.png';
-// import list_top_2 from '../assets/list/list_top_2.png';
-// import list_top_3 from '../assets/list/list_top_3.png';
-// import list_top_4 from '../assets/list/list_top_4.png';
-// import list_top_5 from '../assets/list/list_top_5.png';
-// import list_top_6 from '../assets/list/list_top_6.png';
-// import list_top_7 from '../assets/list/list_top_7.png';
-// import list_top_8 from '../assets/list/list_top_8.png';
-// import list_top_9 from '../assets/list/list_top_9.png';
-// import list_top_10 from '../assets/list/list_top_10.png';
-// import list_top_11 from '../assets/list/list_top_11.png';
-// import list_top_12 from '../assets/list/list_top_12.png';
-// import list_top_13 from '../assets/list/list_top_13.png';
-// import list_top_14 from '../assets/list/list_top_14.png';
-// import list_top_15 from '../assets/list/list_top_15.png';
-import list_body_1 from '../assets/list/list_body_1.svg';
-import list_body_2 from '../assets/list/list_body_2.svg';
-import list_body_3 from '../assets/list/list_body_3.svg';
-import list_body_4 from '../assets/list/list_body_4.svg';
-import list_body_5 from '../assets/list/list_body_5.svg';
-import list_body_6 from '../assets/list/list_body_6.svg';
-import list_body_7 from '../assets/list/list_body_7.svg';
-import list_body_8 from '../assets/list/list_body_8.svg';
-import list_body_9 from '../assets/list/list_body_9.svg';
-import list_body_10 from '../assets/list/list_body_10.svg';
-import list_body_11 from '../assets/list/list_body_11.svg';
-import list_body_12 from '../assets/list/list_body_12.svg';
-import list_body_13 from '../assets/list/list_body_13.svg';
-import list_body_14 from '../assets/list/list_body_14.svg';
-import list_body_15 from '../assets/list/list_body_15.svg';
-// import list_body_1 from '../assets/list/list_body_15.png';
-// import list_body_3 from '../assets/list/list_body_3.png';
-// import list_body_2 from '../assets/list/list_body_2.png';
-// import list_body_4 from '../assets/list/list_body_4.png';
-// import list_body_5 from '../assets/list/list_body_5.png';
-// import list_body_6 from '../assets/list/list_body_6.png';
-// import list_body_7 from '../assets/list/list_body_7.png';
-// import list_body_8 from '../assets/list/list_body_8.png';
-// import list_body_9 from '../assets/list/list_body_9.png';
-// import list_body_10 from '../assets/list/list_body_10.png';
-// import list_body_11 from '../assets/list/list_body_11.png';
-// import list_body_12 from '../assets/list/list_body_12.png';
-// import list_body_13 from '../assets/list/list_body_13.png';
-// import list_body_14 from '../assets/list/list_body_14.png';
-// import list_body_15 from '../assets/list/list_body_15.png';
+import list_top_mobile_1 from '../assets/list/list_top_mobile_1.png';
+import list_top_mobile_2 from '../assets/list/list_top_mobile_2.png';
+import list_top_mobile_3 from '../assets/list/list_top_mobile_3.png';
+import list_top_mobile_4 from '../assets/list/list_top_mobile_4.png';
+import list_top_mobile_5 from '../assets/list/list_top_mobile_5.png';
+import list_top_mobile_6 from '../assets/list/list_top_mobile_6.png';
+import list_top_mobile_7 from '../assets/list/list_top_mobile_7.png';
+import list_top_mobile_8 from '../assets/list/list_top_mobile_8.png';
+import list_top_mobile_9 from '../assets/list/list_top_mobile_9.png';
+import list_top_mobile_10 from '../assets/list/list_top_mobile_10.png';
+import list_top_mobile_11 from '../assets/list/list_top_mobile_11.png';
+import list_top_mobile_12 from '../assets/list/list_top_mobile_12.png';
+import list_top_mobile_13 from '../assets/list/list_top_mobile_13.png';
+import list_top_mobile_14 from '../assets/list/list_top_mobile_14.png';
+import list_top_mobile_15 from '../assets/list/list_top_mobile_15.png';
+import list_top_1 from '../assets/list/list_top_1.png';
+import list_top_2 from '../assets/list/list_top_2.png';
+import list_top_3 from '../assets/list/list_top_3.png';
+import list_top_4 from '../assets/list/list_top_4.png';
+import list_top_5 from '../assets/list/list_top_5.png';
+import list_top_6 from '../assets/list/list_top_6.png';
+import list_top_7 from '../assets/list/list_top_7.png';
+import list_top_8 from '../assets/list/list_top_8.png';
+import list_top_9 from '../assets/list/list_top_9.png';
+import list_top_10 from '../assets/list/list_top_10.png';
+import list_top_11 from '../assets/list/list_top_11.png';
+import list_top_12 from '../assets/list/list_top_12.png';
+import list_top_13 from '../assets/list/list_top_13.png';
+import list_top_14 from '../assets/list/list_top_14.png';
+import list_top_15 from '../assets/list/list_top_15.png';
+import list_body_mobile_1 from '../assets/list/list_body_mobile_1.png';
+import list_body_mobile_2 from '../assets/list/list_body_mobile_2.png';
+import list_body_mobile_3 from '../assets/list/list_body_mobile_3.png';
+import list_body_mobile_4 from '../assets/list/list_body_mobile_4.png';
+import list_body_mobile_5 from '../assets/list/list_body_mobile_5.png';
+import list_body_mobile_6 from '../assets/list/list_body_mobile_6.png';
+import list_body_mobile_7 from '../assets/list/list_body_mobile_7.png';
+import list_body_mobile_8 from '../assets/list/list_body_mobile_8.png';
+import list_body_mobile_9 from '../assets/list/list_body_mobile_9.png';
+import list_body_mobile_10 from '../assets/list/list_body_mobile_10.png';
+import list_body_mobile_11 from '../assets/list/list_body_mobile_11.png';
+import list_body_mobile_12 from '../assets/list/list_body_mobile_12.png';
+import list_body_mobile_13 from '../assets/list/list_body_mobile_13.png';
+import list_body_mobile_14 from '../assets/list/list_body_mobile_14.png';
+import list_body_mobile_15 from '../assets/list/list_body_mobile_15.png';
+import list_body_1 from '../assets/list/list_body_15.png';
+import list_body_3 from '../assets/list/list_body_3.png';
+import list_body_2 from '../assets/list/list_body_2.png';
+import list_body_4 from '../assets/list/list_body_4.png';
+import list_body_5 from '../assets/list/list_body_5.png';
+import list_body_6 from '../assets/list/list_body_6.png';
+import list_body_7 from '../assets/list/list_body_7.png';
+import list_body_8 from '../assets/list/list_body_8.png';
+import list_body_9 from '../assets/list/list_body_9.png';
+import list_body_10 from '../assets/list/list_body_10.png';
+import list_body_11 from '../assets/list/list_body_11.png';
+import list_body_12 from '../assets/list/list_body_12.png';
+import list_body_13 from '../assets/list/list_body_13.png';
+import list_body_14 from '../assets/list/list_body_14.png';
+import list_body_15 from '../assets/list/list_body_15.png';
 import { ref, watchEffect } from 'vue';
 export default {
   setup(props, { emit }) {
     const dataArr = [
       {
         imgHead: list_top_1,
+        imgHead_mobile: list_top_mobile_1,
         imgBody: list_body_1,
+        imgBody_mobile: list_body_mobile_1,
         text: 'first deposit',
         link: 'https://megapari.com/bonus/rules/1st',
       },
       {
         imgHead: list_top_2,
+        imgHead_mobile: list_top_mobile_2,
         imgBody: list_body_2,
+        imgBody_mobile: list_body_mobile_2,
         text: '1500€ + 150FS',
         link: 'https://megapari.com/bonus/rules/slot_first_deposit',
       },
       {
         imgHead: list_top_3,
+        imgHead_mobile: list_top_mobile_3,
         imgBody: list_body_3,
+        imgBody_mobile: list_body_mobile_3,
         text: 'Special tournament',
         link: 'https://megapari.com/line/football/1938952-fifa-world-cup-2022',
       },
       {
         imgHead: list_top_4,
+        imgHead_mobile: list_top_mobile_4,
         imgBody: list_body_4,
+        imgBody_mobile: list_body_mobile_4,
         text: 'black friday tournament',
         link: 'https://megapari.com/ru/bonus/rules/drops_and_wins_2022',
       },
       {
         imgHead: list_top_5,
+        imgHead_mobile: list_top_mobile_5,
         imgBody: list_body_5,
+        imgBody_mobile: list_body_mobile_5,
         text: 'get +10% to winning',
         link: 'https://megapari.com/',
       },
       {
         imgHead: list_top_6,
+        imgHead_mobile: list_top_mobile_6,
         imgBody: list_body_6,
+        imgBody_mobile: list_body_mobile_6,
         text: 'SATURDAY BONUS ',
         link: 'https://megapari.com/bonus/rules/saturday_football_bonus',
       },
       {
         imgHead: list_top_7,
+        imgHead_mobile: list_top_mobile_7,
         imgBody: list_body_7,
+        imgBody_mobile: list_body_mobile_7,
         text: 'Cashback up to 30% for eSports',
         link: 'https://megapari.com/cybercalendar',
       },
       {
         imgHead: list_top_8,
+        imgHead_mobile: list_top_mobile_8,
         imgBody: list_body_8,
+        imgBody_mobile: list_body_mobile_8,
         text: ' 5% cashback',
         link: 'https://megapari.com/allgamesentrance',
       },
       {
         imgHead: list_top_9,
+        imgHead_mobile: list_top_mobile_9,
         imgBody: list_body_9,
+        imgBody_mobile: list_body_mobile_9,
         text: 'Catch your wished odds',
         link: 'https://megapari.com/',
       },
       {
         imgHead: list_top_10,
+        imgHead_mobile: list_top_mobile_10,
         imgBody: list_body_10,
+        imgBody_mobile: list_body_mobile_10,
         text: 'jackpot ',
         link: 'https://megapari.com/toto/fifteen',
       },
       {
         imgHead: list_top_11,
+        imgHead_mobile: list_top_mobile_11,
         imgBody: list_body_11,
+        imgBody_mobile: list_body_mobile_11,
         text: 'bet with zero balance ',
         link: 'https://megapari.com/bonus/rules/doverie',
       },
       {
         imgHead: list_top_12,
+        imgHead_mobile: list_top_mobile_12,
         imgBody: list_body_12,
+        imgBody_mobile: list_body_mobile_12,
         text: 'Prize Pool €500 000',
         link: 'https://megapari.com/bonus/rules/grand_holidays_tournament',
       },
       {
         imgHead: list_top_13,
+        imgHead_mobile: list_top_mobile_13,
         imgBody: list_body_13,
+        imgBody_mobile: list_body_mobile_13,
         text: 'cashout',
         link: 'https://megapari.com/',
       },
       {
         imgHead: list_top_14,
+        imgHead_mobile: list_top_mobile_14,
         imgBody: list_body_14,
+        imgBody_mobile: list_body_mobile_14,
         text: 'weekly 3% real money',
         link: 'https://megapari.com/bonus/rules/cash',
       },
       {
         imgHead: list_top_15,
+        imgHead_mobile: list_top_mobile_15,
         imgBody: list_body_15,
+        imgBody_mobile: list_body_mobile_15,
         text: 'refund bet loss',
         link: 'https://megapari.com/',
       },
@@ -240,14 +276,20 @@ export default {
     &:nth-child(10) .el__text
       max-width: 120px
       margin-bottom: 10%
+    &:nth-child(10) .el__body
+      right: 10%
     &:nth-child(11) .el__text
       max-width: 130px
       margin-bottom: 5%
+    &:nth-child(11) .el__body
+      right: 1%
     &:nth-child(12) .el__text
       margin-bottom: 5%
     &:nth-child(13) .el__text
       max-width: 130px
       margin-bottom: 10%
+    &:nth-child(13) .el__body
+      right: 1%
     &:nth-child(14) .el__text
       max-width: 130px
       margin-bottom: 5%
@@ -255,7 +297,7 @@ export default {
       max-width: 80px
       margin-bottom: 5%
     &:nth-child(1) .el__body
-      bottom: unset
+      bottom: 20%
       right: 0
     &:nth-child(3) .el__body
       // bottom: unset
@@ -264,7 +306,7 @@ export default {
       // bottom: unset
       right: 0
     &:nth-child(15) .el__body
-      bottom: unset
+      bottom: 20%
       right: 0
     .el__text
       font-family: 'Montserrat'
