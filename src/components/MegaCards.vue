@@ -26,7 +26,7 @@
         />
       </div>
     </div>
-    <div class="bottom__deco"></div>
+    <div v-if="!isMobile" class="bottom__deco"></div>
   </div>
 </template>
 
@@ -330,7 +330,7 @@ export default {
   bottom: 26px
   left: calc(50% - calc(1712px/2))
   background-image: url(/src/assets/bg_bottom.png)
-  background-size: contain
+  background-size: cover
   background-position: center
   background-repeat: no-repeat
   min-width: 1714px

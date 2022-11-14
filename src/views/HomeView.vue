@@ -3,7 +3,6 @@
     <MegaHead @requestRedirect="redirectTo" class="m_head"></MegaHead>
     <MegaTimer class="m_timer"></MegaTimer>
     <MegaCards @requestRedirect="redirectTo" class="m_cards"></MegaCards>
-    <!-- <div class="bottom_deco"></div> -->
   </div>
 </template>
 
@@ -33,17 +32,6 @@ const redirectTo = (where) => {
   .m_cards
     margin-bottom: 160px
     z-index: 10
-  .bottom_deco
-    position: absolute
-    bottom: 26px
-    left: calc(50% - calc(1712px/2))
-    background-image: url(/src/assets/bg_bottom.png)
-    background-size: contain
-    background-position: center
-    background-repeat: no-repeat
-    min-width: 1714px
-    height: 1072px
-    z-index: auto
 @media (max-width: 860px)
   .m_timer
     margin-top: 80px
